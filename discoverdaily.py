@@ -335,7 +335,7 @@ class DiscoverDaily(object):
 
 if __name__ == "__main__":
     # check for config file
-    print(f"Python Discover Daily Script. Written by Susan Bloom. Current date/time: {{datetime.datetime.now().isoformat()}}")
+    print(f"Python Discover Daily Script. Written by Susan Bloom. Current date/time: {datetime.datetime.now().isoformat()}")
     if len(argv) > 1:
         CONFIG_FILE = argv[1]
     else:
