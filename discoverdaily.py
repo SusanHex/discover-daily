@@ -2,6 +2,7 @@ import base64
 import json
 import pdb
 import time
+import datetime
 import urllib.parse
 from os import path
 import requests
@@ -161,7 +162,7 @@ class DiscoverDaily(object):
         data_params = {
             "name": "Discover Daily",
             "public": "false",
-            "description": "All the unliked songs from the daily mixes in one convenient place."
+            "description": f"All the unliked songs from the daily mixes in one convenient place. ({datetime.datetime.now().isoformat()})"
         }
         response = requests.post(creation_url, headers=headers, json=data_params)
         # status code 201 indicates successful creation
@@ -334,6 +335,7 @@ class DiscoverDaily(object):
 
 if __name__ == "__main__":
     # check for config file
+    print(f"Python Discover Daily Script. Written by Susan Bloom. Current date/time: {{datetime.datetime.now().isoformat()}}")
     if len(argv) > 1:
         CONFIG_FILE = argv[1]
     else:
